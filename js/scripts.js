@@ -1,8 +1,11 @@
+//Buisness time
+//----------------------
 function Pizza(pizzaSize, cheese) {
   this.pizzaSize = pizzaSize;
   this.cheese = cheese;
   this.vegToppings = [];
 }
+//price calculator
 Pizza.prototype.addCost = function() {
   var cost = 0;
   if (this.pizzaSize === "medium") {
@@ -14,9 +17,10 @@ Pizza.prototype.addCost = function() {
   } else if (this.pizzaSize === "extra large") {
     cost = 10;
     this.vegToppings.forEach(function() {
-      cost += 0.75;
+      cost += 0.50;
     });
   }
+  this.cost = cost;
 }
 Pizza.prototype.addVeg = function(veggie) {
   this.vegToppings.push(veggie);
